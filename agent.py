@@ -1,10 +1,10 @@
-import os
 from dotenv import load_dotenv
 
 from livekit import agents
 from livekit.agents import AgentSession, Agent, RoomInputOptions
-from livekit.plugins import (openai, noise_cancellation, silero)
-from livekit.plugins import sarvam, google
+from livekit.plugins import (noise_cancellation, silero)
+from livekit.plugins import sarvam
+from sarvam_llm import create_sarvam_llm
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 load_dotenv(".env.local")
@@ -16,10 +16,10 @@ class Assistant(Agent):
 
 
 async def entrypoint(ctx: agents.JobContext):
-    google_api_key = os.getenv("GOOGLE_API_KEY")
+    llm = create_sarvam_llm()
     session = AgentSession(
-        stt=sarvam.STT(model="saarika:v2.5", language="en-IN"),
-        llm=google.LLM(model="gemini-2.5-flash-lite", api_key=google_api_key),
+        stt=sarvam.STT(model="saarika:v2.5", language="hi-IN"),
+        llm=llm,
         tts=sarvam.TTS(target_language_code="en-IN", model="bulbul:v2", speaker="anushka"),
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),

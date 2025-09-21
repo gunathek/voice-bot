@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 
 from livekit import agents
@@ -15,9 +16,10 @@ class Assistant(Agent):
 
 
 async def entrypoint(ctx: agents.JobContext):
+    google_api_key = os.getenv("GOOGLE_API_KEY")
     session = AgentSession(
         stt=sarvam.STT(model="saarika:v2.5", language="en-IN"),
-        llm=google.LLM(model="gemini-2.5-flash-lite", api_key="AIzaSyCGZmNriDEzGuICqimL8CrWtFBftwcTa4M"),
+        llm=google.LLM(model="gemini-2.5-flash-lite", api_key=google_api_key),
         tts=sarvam.TTS(target_language_code="en-IN", model="bulbul:v2", speaker="anushka"),
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),

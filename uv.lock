@@ -242,6 +242,15 @@ wheels = [
 ]
 
 [[package]]
+name = "cachetools"
+version = "5.5.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz", hash = "sha256:1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4", size = 28380, upload-time = "2025-02-20T21:01:19.524Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/72/76/20fa66124dbe6be5cafeb312ece67de6b61dd91a0247d1ea13db4ebb33c2/cachetools-5.5.2-py3-none-any.whl", hash = "sha256:d26a22bcc62eb95c3beabd9f1ee5e820d3d2704fe2967cbe350e20c8ffcd3f0a", size = 10080, upload-time = "2025-02-20T21:01:16.647Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2025.8.3"
 source = { registry = "https://pypi.org/simple" }
@@ -650,6 +659,91 @@ wheels = [
 ]
 
 [[package]]
+name = "google-api-core"
+version = "2.25.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-auth" },
+    { name = "googleapis-common-protos" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dc/21/e9d043e88222317afdbdb567165fdbc3b0aad90064c7e0c9eb0ad9955ad8/google_api_core-2.25.1.tar.gz", hash = "sha256:d2aaa0b13c78c61cb3f4282c464c046e45fbd75755683c9c525e6e8f7ed0a5e8", size = 165443, upload-time = "2025-06-12T20:52:20.439Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/14/4b/ead00905132820b623732b175d66354e9d3e69fcf2a5dcdab780664e7896/google_api_core-2.25.1-py3-none-any.whl", hash = "sha256:8a2a56c1fef82987a524371f99f3bd0143702fecc670c72e600c1cda6bf8dbb7", size = 160807, upload-time = "2025-06-12T20:52:19.334Z" },
+]
+
+[package.optional-dependencies]
+grpc = [
+    { name = "grpcio" },
+    { name = "grpcio-status" },
+]
+
+[[package]]
+name = "google-auth"
+version = "2.40.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cachetools" },
+    { name = "pyasn1-modules" },
+    { name = "rsa" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9e/9b/e92ef23b84fa10a64ce4831390b7a4c2e53c0132568d99d4ae61d04c8855/google_auth-2.40.3.tar.gz", hash = "sha256:500c3a29adedeb36ea9cf24b8d10858e152f2412e3ca37829b3fa18e33d63b77", size = 281029, upload-time = "2025-06-04T18:04:57.577Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/17/63/b19553b658a1692443c62bd07e5868adaa0ad746a0751ba62c59568cd45b/google_auth-2.40.3-py2.py3-none-any.whl", hash = "sha256:1370d4593e86213563547f97a92752fc658456fe4514c809544f330fed45a7ca", size = 216137, upload-time = "2025-06-04T18:04:55.573Z" },
+]
+
+[[package]]
+name = "google-cloud-speech"
+version = "2.33.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9a/74/9c5a556f8af19cab461058aa15e1409e7afa453ca2383473a24a12801ef7/google_cloud_speech-2.33.0.tar.gz", hash = "sha256:fd08511b5124fdaa768d71a4054e84a5d8eb02531cb6f84f311c0387ea1314ed", size = 389072, upload-time = "2025-06-11T23:56:37.231Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/12/1d/880342b2541b4bad888ad8ab2ac77d4b5dad25b32a2a1c5f21140c14c8e3/google_cloud_speech-2.33.0-py3-none-any.whl", hash = "sha256:4ba16c8517c24a6abcde877289b0f40b719090504bf06b1adea248198ccd50a5", size = 335681, upload-time = "2025-06-11T23:56:36.026Z" },
+]
+
+[[package]]
+name = "google-cloud-texttospeech"
+version = "2.29.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-api-core", extra = ["grpc"] },
+    { name = "google-auth" },
+    { name = "proto-plus" },
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6c/22/f9ac9fb703ccb31a4bbbfe5a188642d3cce6f41e2d402c7f7d86982fdbdf/google_cloud_texttospeech-2.29.0.tar.gz", hash = "sha256:2c0b7378ba7639f70737f4a39de2493d30c85d387b8c16822c6e7e100c1c75a3", size = 184019, upload-time = "2025-09-04T14:54:38.248Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4c/21/9f6d8166691b153f7814e8e2aa0fdbdc1df44f7c61b8a3c98bc9abce39b6/google_cloud_texttospeech-2.29.0-py3-none-any.whl", hash = "sha256:fde126e928379958d5ef8fa7bad84ac7ede6291a6fccea8d4b218b7520b91d52", size = 190381, upload-time = "2025-09-04T14:54:25.222Z" },
+]
+
+[[package]]
+name = "google-genai"
+version = "1.38.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "google-auth" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "tenacity" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b4/11/108ddd3aca8af6a9e2369e59b9646a3a4c64aefb39d154f6467ab8d79f34/google_genai-1.38.0.tar.gz", hash = "sha256:363272fc4f677d0be6a1aed7ebabe8adf45e1626a7011a7886a587e9464ca9ec", size = 244903, upload-time = "2025-09-16T23:25:42.577Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/53/6c/1de711bab3c118284904c3bedf870519e8c63a7a8e0905ac3833f1db9cbc/google_genai-1.38.0-py3-none-any.whl", hash = "sha256:95407425132d42b3fa11bc92b3f5cf61a0fbd8d9add1f0e89aac52c46fbba090", size = 245558, upload-time = "2025-09-16T23:25:41.141Z" },
+]
+
+[[package]]
 name = "googleapis-common-protos"
 version = "1.70.0"
 source = { registry = "https://pypi.org/simple" }
@@ -720,6 +814,20 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e6/33/17f243baf59d30480dc3a25d42f8b7d6d8abfad4813599ef8f352ae062b9/grpcio-1.75.0-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:0aa795198b28807d28570c0a5f07bb04d5facca7d3f27affa6ae247bbd7f312a", size = 7486436, upload-time = "2025-09-16T09:20:13.08Z" },
     { url = "https://files.pythonhosted.org/packages/b8/5f/a019ab5f5116fb8a17efe2e2b4a62231131a2fb3c1a71c9e6477b09c1999/grpcio-1.75.0-cp39-cp39-win32.whl", hash = "sha256:585147859ff4603798e92605db28f4a97c821c69908e7754c44771c27b239bbd", size = 3947720, upload-time = "2025-09-16T09:20:15.423Z" },
     { url = "https://files.pythonhosted.org/packages/33/4d/e9d518d0de09781d4bd21da0692aaff2f6170b609de3967b58f3a017a352/grpcio-1.75.0-cp39-cp39-win_amd64.whl", hash = "sha256:eafbe3563f9cb378370a3fa87ef4870539cf158124721f3abee9f11cd8162460", size = 4641965, upload-time = "2025-09-16T09:20:18.65Z" },
+]
+
+[[package]]
+name = "grpcio-status"
+version = "1.75.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "googleapis-common-protos" },
+    { name = "grpcio" },
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ca/8a/2e45ec0512d4ce9afa136c6e4186d063721b5b4c192eec7536ce6b7ba615/grpcio_status-1.75.0.tar.gz", hash = "sha256:69d5b91be1b8b926f086c1c483519a968c14640773a0ccdd6c04282515dbedf7", size = 13646, upload-time = "2025-09-16T09:24:51.069Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2b/24/d536f0a0fda3a3eeb334893e5fb9d567c2777de6a5384413f71b35cfd0e5/grpcio_status-1.75.0-py3-none-any.whl", hash = "sha256:de62557ef97b7e19c3ce6da19793a12c5f6c1fbbb918d233d9671aba9d9e1d78", size = 14424, upload-time = "2025-09-16T09:23:33.843Z" },
 ]
 
 [[package]]
@@ -1085,6 +1193,22 @@ wheels = [
 ]
 
 [[package]]
+name = "livekit-plugins-google"
+version = "1.2.11"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-auth" },
+    { name = "google-cloud-speech" },
+    { name = "google-cloud-texttospeech" },
+    { name = "google-genai" },
+    { name = "livekit-agents" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2c/ce/3d03283684edc4f6e4c7cc36cedf6ef6b111ee620e2d160c891976b2ad33/livekit_plugins_google-1.2.11.tar.gz", hash = "sha256:18d62a7eca2dbb7e833568ae48f00af382ad44ab7a81fd169bdfd0970b9e5a84", size = 30637, upload-time = "2025-09-18T19:15:08.099Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/35/0b/207e50a137eab91b3357d847335426001e100c4e8dbee328107111c79bbd/livekit_plugins_google-1.2.11-py3-none-any.whl", hash = "sha256:e30271fe5b7ff4f876f90394a697a4fb3b99c9df6927179b8b10dd8551773749", size = 37624, upload-time = "2025-09-18T19:15:06.968Z" },
+]
+
+[[package]]
 name = "livekit-plugins-noise-cancellation"
 version = "0.2.5"
 source = { registry = "https://pypi.org/simple" }
@@ -1110,6 +1234,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/d2/f6/f11f23ad11554c52093bd995d5a8054560c02b87c98b3170e0c7326743a2/livekit_plugins_openai-1.2.11.tar.gz", hash = "sha256:29d21266bb0497b4cc529f63032c2d9edc009c58f85d2431360ef1a9357a4ac0", size = 43837, upload-time = "2025-09-18T19:15:25.013Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/52/d3/53e98a2413322b07fd4d7e0a37a1ad0042d614794fa41d7b2d05dcf5a35f/livekit_plugins_openai-1.2.11-py3-none-any.whl", hash = "sha256:de771cfc91c242a3c0abdcd057de1caa03698887f5b77a127c7651d1663c6db0", size = 50521, upload-time = "2025-09-18T19:15:23.736Z" },
+]
+
+[[package]]
+name = "livekit-plugins-sarvam"
+version = "1.2.11"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "livekit-agents", extra = ["codecs"] },
+    { name = "numpy", version = "2.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*'" },
+    { name = "numpy", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e8/d8/9a5333ee5f17907c46d5a8f3a7543855ade3ee653b3cc2bae1903d945136/livekit_plugins_sarvam-1.2.11.tar.gz", hash = "sha256:214d0e633b75aea0203414ba8ff49cd58695fb9630c453db552b58d8ff092e54", size = 8059, upload-time = "2025-09-18T19:15:30.818Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0c/41/8f784d0f74473fcba56682d2091473dfa3c92003dbd7a35370bf45926a4c/livekit_plugins_sarvam-1.2.11-py3-none-any.whl", hash = "sha256:d8d6a153e57e4cbc9a07538ddbe93f92cd46dd5dbb836fdd5c1c87b799c5c679", size = 10031, upload-time = "2025-09-18T19:15:30.07Z" },
 ]
 
 [[package]]
@@ -2024,6 +2163,18 @@ wheels = [
 ]
 
 [[package]]
+name = "proto-plus"
+version = "1.26.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "protobuf" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f4/ac/87285f15f7cce6d4a008f33f1757fb5a13611ea8914eb58c3d0d26243468/proto_plus-1.26.1.tar.gz", hash = "sha256:21a515a4c4c0088a773899e23c7bbade3d18f9c66c73edd4c7ee3816bc96a012", size = 56142, upload-time = "2025-03-10T15:54:38.843Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4e/6d/280c4c2ce28b1593a19ad5239c8b826871fc6ec275c21afc8e1820108039/proto_plus-1.26.1-py3-none-any.whl", hash = "sha256:13285478c2dcf2abb829db158e1047e2f1e8d63a077d94263c2b88b043c75a66", size = 50163, upload-time = "2025-03-10T15:54:37.335Z" },
+]
+
+[[package]]
 name = "protobuf"
 version = "6.32.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2053,6 +2204,27 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/79/87/157c8e7959ec39ced1b11cc93c730c4fb7f9d408569a6c59dbd92ceb35db/psutil-7.1.0-cp37-abi3-win32.whl", hash = "sha256:09ad740870c8d219ed8daae0ad3b726d3bf9a028a198e7f3080f6a1888b99bca", size = 244812, upload-time = "2025-09-17T20:15:07.462Z" },
     { url = "https://files.pythonhosted.org/packages/bf/e9/b44c4f697276a7a95b8e94d0e320a7bf7f3318521b23de69035540b39838/psutil-7.1.0-cp37-abi3-win_amd64.whl", hash = "sha256:57f5e987c36d3146c0dd2528cd42151cf96cd359b9d67cfff836995cc5df9a3d", size = 247965, upload-time = "2025-09-17T20:15:09.673Z" },
     { url = "https://files.pythonhosted.org/packages/26/65/1070a6e3c036f39142c2820c4b52e9243246fcfc3f96239ac84472ba361e/psutil-7.1.0-cp37-abi3-win_arm64.whl", hash = "sha256:6937cb68133e7c97b6cc9649a570c9a18ba0efebed46d8c5dae4c07fa1b67a07", size = 244971, upload-time = "2025-09-17T20:15:12.262Z" },
+]
+
+[[package]]
+name = "pyasn1"
+version = "0.6.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz", hash = "sha256:6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034", size = 145322, upload-time = "2024-09-10T22:41:42.55Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl", hash = "sha256:0d632f46f2ba09143da3a8afe9e33fb6f92fa2320ab7e886e2d0f7672af84629", size = 83135, upload-time = "2024-09-11T16:00:36.122Z" },
+]
+
+[[package]]
+name = "pyasn1-modules"
+version = "0.4.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyasn1" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e9/e6/78ebbb10a8c8e4b61a59249394a4a594c1a7af95593dc933a349c8d00964/pyasn1_modules-0.4.2.tar.gz", hash = "sha256:677091de870a80aae844b1ca6134f54652fa2c8c5a52aa396440ac3106e941e6", size = 307892, upload-time = "2025-03-28T02:41:22.17Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl", hash = "sha256:29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a", size = 181259, upload-time = "2025-03-28T02:41:19.028Z" },
 ]
 
 [[package]]
@@ -2406,6 +2578,18 @@ wheels = [
 ]
 
 [[package]]
+name = "rsa"
+version = "4.9.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyasn1" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/da/8a/22b7beea3ee0d44b1916c0c1cb0ee3af23b700b6da9f04991899d0c555d4/rsa-4.9.1.tar.gz", hash = "sha256:e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75", size = 29034, upload-time = "2025-04-16T09:51:18.218Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl", hash = "sha256:68635866661c6836b8d39430f97a996acbd61bfa49406748ea243539fe239762", size = 34696, upload-time = "2025-04-16T09:51:17.142Z" },
+]
+
+[[package]]
 name = "safetensors"
 version = "0.6.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2461,6 +2645,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2bb238361cd4ae6125a569b4db67cd9e79846ba2d68c/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517", size = 7793921, upload-time = "2025-04-27T18:05:01.611Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353, upload-time = "2025-04-27T18:04:59.103Z" },
+]
+
+[[package]]
+name = "tenacity"
+version = "9.1.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz", hash = "sha256:1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb", size = 48036, upload-time = "2025-04-02T08:25:09.966Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e5/30/643397144bfbfec6f6ef821f36f33e57d35946c44a2352d3c9f0ae847619/tenacity-9.1.2-py3-none-any.whl", hash = "sha256:f77bf36710d8b73a50b2dd155c97b870017ad21afe6ab300326b0371b3b05138", size = 28248, upload-time = "2025-04-02T08:25:07.678Z" },
 ]
 
 [[package]]
@@ -2568,14 +2761,18 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "livekit-agents", extra = ["cartesia", "deepgram", "openai", "silero", "turn-detector"] },
+    { name = "livekit-plugins-google" },
     { name = "livekit-plugins-noise-cancellation" },
+    { name = "livekit-plugins-sarvam" },
     { name = "python-dotenv" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "livekit-agents", extras = ["cartesia", "deepgram", "openai", "silero", "turn-detector"], specifier = "~=1.2" },
+    { name = "livekit-plugins-google" },
     { name = "livekit-plugins-noise-cancellation", specifier = "~=0.2" },
+    { name = "livekit-plugins-sarvam" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
 ]
 

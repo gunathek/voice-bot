@@ -17,19 +17,30 @@ class Assistant(Agent):
 
 async def entrypoint(ctx: agents.JobContext):
     llm = create_sarvam_llm()
+    sarvam_tts = sarvam.TTS(target_language_code="hi-IN", model="bulbul:v2", speaker="anushka", enable_preprocessing=True)
+
     session = AgentSession(
-        stt=sarvam.STT(model="saarika:v2.5", language="hi-IN"),
+        stt=sarvam.STT(model="saarika:v2.5", language="unknown"),
         llm=llm,
-        tts=sarvam.TTS(target_language_code="en-IN", model="bulbul:v2", speaker="anushka"),
+        tts=sarvam_tts,
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),
     )
+
+    @session.on("user_input_transcribed")
+    def _on_user_input_transcribed(ev):
+        try:
+            if not getattr(ev, "is_final", False):
+                from dataclasses import replace
+            lang = getattr(ev, "language", None) or "hi-IN"
+            sarvam_tts._opts = replace(sarvam_tts._opts, target_language_code=lang)
+        except Exception:
+            pass
 
     await session.start(
         room=ctx.room,
         agent=Assistant(),
         room_input_options=RoomInputOptions(
-            # For telephony applications, use `BVCTelephony` instead for best results
             noise_cancellation=noise_cancellation.BVC(),
         ),
     )

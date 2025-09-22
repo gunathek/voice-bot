@@ -27,10 +27,8 @@ def create_sarvam_llm(
     base_url = base_url or os.getenv("SARVAM_LLM_BASE_URL") or "https://api.sarvam.ai/v1"
     model = model or os.getenv("SARVAM_LLM_MODEL") or "sarvam-m"
 
-    # livekit.plugins.openai.LLM accepts OpenAI-compatible params, including base_url
     return lk_openai.LLM(
         model=model,
         api_key=api_key,
         base_url=base_url,
     )
-

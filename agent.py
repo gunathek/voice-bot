@@ -1,3 +1,4 @@
+import os
 from dotenv import load_dotenv
 
 from livekit import agents
@@ -12,7 +13,13 @@ load_dotenv(".env.local")
 
 class Assistant(Agent):
     def __init__(self) -> None:
-        super().__init__(instructions="You are a helpful voice AI assistant.")
+
+        base_dir = os.path.dirname(__file__)
+        prompt_path = os.path.join(base_dir, "prompts", "system_prompt.md")
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            system_prompt = f.read().strip()
+
+        super().__init__(instructions=system_prompt)
 
 
 async def entrypoint(ctx: agents.JobContext):

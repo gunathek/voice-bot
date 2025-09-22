@@ -1,0 +1,97 @@
+[
+   {
+      "id":1,
+      "question":"I don't want to upload bank statement",
+      "expected":"Thanks for letting us know. You can still upload your statement for future offers. Have a good day."
+   },
+   {
+      "id":2,
+      "question":"What is an account aggregator",
+      "expected":"An account aggregator is an RBI-regulated service that lets you securely share your financial data between banks or other regulated institutions, with your consent."
+   },
+   {
+      "id":3,
+      "question":"I tried to upload, but I faced an issue while uploading",
+      "expected":"I understand you are facing issues while uploading, allow us some time and our customer support team will contact you shortly to help you with this."
+   },
+   {
+      "id":4,
+      "question":"How do I upload this bank statement",
+      "expected":"You can upload through the Zype app using Account Aggregator, Netbanking, or by uploading a PDF file."
+   },
+   {
+      "id":5,
+      "question":"How many months or days bank statement is required",
+      "expected":"We need the last 4 months of statements."
+   },
+   {
+      "id":6,
+      "question":"Which account statement should I upload",
+      "expected":"You need to upload the statement for your salary account where your salary is credited."
+   },
+   {
+      "id":7,
+      "question":"why should upload bank statement",
+      "expected":"Uploading your bank statement helps us process your loan faster and can lead to a better loan amount."
+   },
+   {
+      "id":8,
+      "question":"Why is the sky blue?",
+      "expected":"I'm here specifically to help with uploading your salary bank statement. Can we focus on completing that?"
+   },
+   {
+      "id":9,
+      "question":"Who is John Cena?",
+      "expected":"I'm here specifically to help with uploading your salary bank statement. Can we focus on completing that?"
+   },
+   {
+      "id":10,
+      "question":"Fuck off",
+      "expected":"I'm unable to continue this conversation. Thank you, have a good day."
+   },
+   {
+      "id":11,
+      "question":"Can I email this bank statement instead",
+      "expected":"Email isn't supported. Please upload through the app."
+   },
+   {
+      "id":12,
+      "question":"My phone number is not linked to account aggregator",
+      "expected":"Please link your number at the bank or upload your 4-month statement as an alternative."
+   },
+   {
+      "id":13,
+      "question":"I don't have four months bank statement",
+      "expected":"The 4-month statement is required to verify income. If you need help downloading it, we can arrange a callback to guide you."
+   },
+   {
+      "id":14,
+      "question":"I already have a preapproved offer. Why are you asking me for more documents",
+      "expected":"Your offer is based on initial checks. We need documents to verify latest details and finalize it."
+   },
+   {
+      "id":15,
+      "question":"I don't want a loan anymore",
+      "expected":"I respect your decision. May I ask if there's a specific reason? We might be able to address your concerns."
+   },
+   {
+      "id":16,
+      "question":"I got offer from somewhere else",
+      "expected":"Thanks for letting us know. You can still upload your statement for future offers. Have a good day."
+   },
+   {
+      "id":17,
+      "question":"I took a loan from somewhere else",
+      "expected":"Thanks for letting us know. You can still upload your statement for future offers. Have a good day."
+   },
+   {
+      "id":18,
+      "question":"I already uploaded this",
+      "expected":"Thanks for uploading! We'll start processing your application. Have a good day."
+   },
+   {
+      "id":19,
+      "question":"ok i will upload it",
+      "expected":"Great! We'll wait for your statement. Thank you and have a good day."
+   }
+]

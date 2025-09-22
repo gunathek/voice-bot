@@ -2,10 +2,12 @@ import os
 from dotenv import load_dotenv
 
 from livekit import agents
-from livekit.agents import AgentSession, Agent, RoomInputOptions
+from livekit.agents import AgentSession, Agent, RoomInputOptions, JobContext
+from livekit.agents.voice import MetricsCollectedEvent
 from livekit.plugins import (noise_cancellation, silero)
 from livekit.plugins import sarvam
 from sarvam_llm import create_sarvam_llm
+from tracing_langfuse import setup_langfuse
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 load_dotenv(".env.local")
@@ -22,7 +24,14 @@ class Assistant(Agent):
         super().__init__(instructions=system_prompt)
 
 
-async def entrypoint(ctx: agents.JobContext):
+async def entrypoint(ctx: JobContext):
+
+    trace_provider = setup_langfuse(metadata={"langfuse.session.id": ctx.room.name})
+
+    async def flush_trace():
+        trace_provider.force_flush()
+    ctx.add_shutdown_callback(flush_trace)
+
     llm = create_sarvam_llm()
     sarvam_tts = sarvam.TTS(target_language_code="hi-IN", model="bulbul:v2", speaker="anushka", enable_preprocessing=True)
 
@@ -33,6 +42,11 @@ async def entrypoint(ctx: agents.JobContext):
         vad=silero.VAD.load(),
         turn_detection=MultilingualModel(),
     )
+
+    @session.on("metrics_collected")
+    def _on_metrics_collected(ev: MetricsCollectedEvent):
+        from livekit.agents import metrics
+        metrics.log_metrics(ev.metrics)
 
     @session.on("user_input_transcribed")
     def _on_user_input_transcribed(ev):
